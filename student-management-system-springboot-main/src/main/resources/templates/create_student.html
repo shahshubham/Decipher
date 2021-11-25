@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Policy Management System</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Policy Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/students}">Policy Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Create New Policy </h1>
+				<div class = "card-body">
+					<form th:action="@{/students}" th:object = "${student}" method="POST">
+						<div class ="form-group">
+							<label> Policy Number </label>
+							<input
+							type = "text"
+							name = "firstName"
+							th:field = "*{policy}"
+							class = "form-control"
+							placeholder="Enter Policy Number" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Company Code </label>
+							<input
+							type = "text"
+							name = "lastName"
+							th:field = "*{company}"
+							class = "form-control"
+							placeholder="Enter Company Code" 
+							/>
+						</div>
+						
+						
+						
+						<div class ="form-group">
+							<label> Inflation </label>
+							<input
+							type = "text"
+							name = "email"
+							th:field = "*{inflation}"
+							class = "form-control"
+							placeholder="Enter Inflation" 
+							/>
+						</div>
+						
+						<div class ="form-group">
+							<label> Rerate 2010 </label>
+						    <select	 th:field="*{rerate_2010}">
+                            <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+                            </select>	
+					   </div>
+						
+						<div class ="form-group">	
+												
+						
+						
+						
+							<label> Rerate 2013 </label>
+						<select	 th:field="*{rerate_2013}">
+       						 <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     					</select>	
+    					 </div>
+						
+						<div class ="form-group">
+						
+												
+						
+							<label> Rerate 2013 Supp </label>
+						<select	 th:field="*{rerate_2013_supp}">
+        <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     </select>	
+     </div>
+						
+						<div class ="form-group">
+						
+						
+							<label> Rerate 2016 </label>
+						<select	 th:field="*{rerate_2016}">
+         <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     </select>	
+						
+						</div>
+						
+						<div class ="form-group">						
+					
+							<label> Rerate 2016 Supp </label>
+						<select	 th:field="*{rerate_2016_supp}">
+        <option th:value="'M'" th:text="Male"></option>
+    <option th:value="'F'" th:text="Female"></option>
+     </select>	
+     </div>
+						
+						<div class ="form-group">
+     								
+					
+							<label> Rerate 2019 </label>
+						<select	 th:field="*{rerate_2019}">
+         <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     </select>	
+					</div>
+						
+						<div class ="form-group">	
+												
+						
+							<label> Rerate 201 Supp </label>
+						<select	 th:field="*{rerate_2019_supp}">
+        <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     </select>	
+						
+												
+						</div>
+						
+						
+						<div class ="form-group">
+							<label> DRA </label>
+						<select	 th:field="*{dra_eligible}">
+        <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     </select>	
+						
+												
+						</div>
+						
+						
+							
+						<div class ="form-group">
+							<label> CNFO </label>
+						<select	 th:field="*{cnfo_eligible}">
+       <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     </select>	
+						
+												
+						</div>
+						
+						
+							
+						<div class ="form-group">
+							<label> ECNFO </label>
+						<select	 th:field="*{ecnfo_eligible}">
+        <option th:value="'NA'" th:text="NA"></option>
+                            <option th:value="'A'" th:text="ACCEPT"></option>
+                             <option th:value="'D'" th:text="DECLINE"></option>
+                            <option th:value="'DELAY'" th:text="DELAY"></option>
+     </select>	
+						
+												
+						</div>
+						
+						
+							
+						<div class ="form-group">
+							<label> Shared Cost </label>
+						<select	 th:field="*{shared_cost_eligible}">
+        <option th:value="'M'" th:text="Male"></option>
+    <option th:value="'F'" th:text="Female"></option>
+     </select>	
+						</div>
+												
+					
+						
+						<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
